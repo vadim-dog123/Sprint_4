@@ -10,7 +10,7 @@ import ru.yandex.praktikum.MainPage;
 
 import static org.junit.Assert.assertEquals;
 
-public class AccordionTest  {
+public class AccordionTest {
     WebDriver driver;
 
     @Before

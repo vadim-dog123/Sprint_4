@@ -45,8 +45,9 @@ public class MainPage {
         this.webDriver = webDriver;
     }
 
-    public void open() {
+    public MainPage open() {
         webDriver.get(mainPage);
+        return this;
     }
 
     public void clickAccordionHeading0() {
