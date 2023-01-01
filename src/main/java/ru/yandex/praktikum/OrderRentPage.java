@@ -10,7 +10,6 @@ public class OrderRentPage {
     }
 
     public final WebDriver webDriver;
-
     //Когда превести самокат
     private By dateOrder = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
     //Срок аренды
@@ -18,9 +17,9 @@ public class OrderRentPage {
     //Цвет самоката
     //черный
     private By blackScooter = By.id("black");
-    //серый id="grey"
+    //серый
     private By greyScooter = By.id("grey");
-    //коментарий class="Input_Input__1iN_Z Input_Responsible__1jDKN"
+    //коментарий
     private By commentСourier = By.className("Input_Input__1iN_Z Input_Responsible__1jDKN");
     //кнопка заказать
     private By orderButton = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
@@ -68,6 +67,4 @@ public class OrderRentPage {
         webDriver.findElement(saveButton).click();
         return this;
     }
-
-
 }

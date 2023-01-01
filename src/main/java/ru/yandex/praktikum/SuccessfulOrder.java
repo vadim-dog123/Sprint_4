@@ -16,6 +16,4 @@ public class SuccessfulOrder {
     public boolean hasSuccessfulMsg() {
         return webDriver.findElement(successfulMsg).isDisplayed();
     }
-
-
 }

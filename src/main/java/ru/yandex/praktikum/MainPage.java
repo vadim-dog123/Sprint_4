@@ -20,8 +20,6 @@ public class MainPage {
     private final By orderButton = By.xpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
     //Как это работает
     //Куки
-
-
     //Вопросы о важном
     private final By accordionHeading_0 = By.id("accordion__heading-0");
     private final By accordionHeading_1 = By.id("accordion__heading-1");
@@ -141,6 +139,4 @@ public class MainPage {
     public String getTextAccordionPanel7() {
         return webDriver.findElement(accordionPanel_7).getText();
     }
-
-
 }

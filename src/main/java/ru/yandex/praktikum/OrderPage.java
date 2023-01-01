@@ -27,7 +27,6 @@ public class OrderPage {
     //Кнопка далее
     private final By nextButton = By.xpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
 
-
     public OrderPage open() {
         webDriver.get(orderPage);
         return this;
@@ -69,6 +68,4 @@ public class OrderPage {
         webDriver.findElement(nextButton).click();
         return this;
     }
-
-
 }

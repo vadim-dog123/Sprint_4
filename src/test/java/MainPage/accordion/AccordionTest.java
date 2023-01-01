@@ -18,8 +18,8 @@ public class AccordionTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         //WebDriverManager.firefoxdriver().setup();
-        // driver = new FirefoxDriver();
-        //    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        //driver = new FirefoxDriver();
+        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
     //Сколько это стоит? И как оплатить?
@@ -114,6 +114,4 @@ public class AccordionTest {
     public void tearDown() {
         driver.quit();
     }
-
-
 }

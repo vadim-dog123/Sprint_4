@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.yandex.praktikum.MainPage;
 import ru.yandex.praktikum.OrderPage;
 import ru.yandex.praktikum.OrderRentPage;
@@ -20,7 +21,6 @@ import static org.junit.Assert.assertTrue;
 @RunWith(Parameterized.class)
 public class PositiveScenarioOrderingScooterTest {
     WebDriver driver;
-
     private final String locationOrderButton;
     private final String name;
     private final String surName;
@@ -35,8 +35,9 @@ public class PositiveScenarioOrderingScooterTest {
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+        //   WebDriverManager.firefoxdriver().setup();
+        // driver=new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
     public PositiveScenarioOrderingScooterTest(String locationOrderButton,
@@ -70,7 +71,6 @@ public class PositiveScenarioOrderingScooterTest {
     @Test
     public void OrderingScooterTest() {
         MainPage mainPage = new MainPage(driver).open();
-
         if (locationOrderButton.equals("Верх")) {
             mainPage.clickOrderButtonTop();
         } else {
@@ -86,7 +86,6 @@ public class PositiveScenarioOrderingScooterTest {
         OrderRentPage orderRentPage = new OrderRentPage(driver)
                 .dateOrder(date)
                 .rentalPeriod(daysForRent);
-
         if (color.equals("черный")) {
             orderRentPage.blackScooterClick();
         } else if (color.equals("серый")) {
@@ -95,17 +94,13 @@ public class PositiveScenarioOrderingScooterTest {
         orderRentPage
                 .orderButtonClick()
                 .saveOrderButton();
-
         assertTrue("Нет страници с номером заказа", new SuccessfulOrder(driver).hasSuccessfulMsg());
     }
-
 
     @After
     public void tearDown() {
         driver.quit();
     }
-
-
 }
 
 
