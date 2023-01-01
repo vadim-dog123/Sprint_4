@@ -60,7 +60,7 @@ public class PositiveScenarioOrderingScooterTest {
         this.color = color;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: расположение кнопки \"Заказать\" {0}; Детали заказа->{1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}")
     public static Object[][] getTestData() {
         return new Object[][]{
                 {"Верх", "Андрей", "Андреевский", "г.Москва", "Бульвар Рокоссовского", "89999999999", "10.12.2022", "сутки", "черный"},
